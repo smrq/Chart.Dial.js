@@ -1,0 +1,28 @@
+{
+  "name": "Chart.Dial.js",
+  "description": "A dial chart implementation for Chart.js",
+  "main": "Chart.Dial.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "*.json",
+    "node_modules",
+    "bower_components"
+  ],
+  "keywords": [
+    "chart",
+    "dial",
+    "chart.js"
+  ],
+  "authors": [
+    "Greg Smith <smr.kyu@gmail.com>"
+  ],
+  "homepage": "https://github.com/smrq/Chart.Dial.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smrq/Chart.Dial.js.git"
+  },
+  "dependencies": {
+    "chartjs": "~1.0.0"
+  }
+}

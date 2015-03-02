@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Dial Chart</title>
+		<script src="http://www.chartjs.org/assets/Chart.min.js"></script>
+		<script src="../Chart.Dial.js"></script>
+		<style>
+			body{
+				padding: 0;
+				margin: 20px;
+			}
+			#canvas-holder{
+				width: 30%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="canvas-holder">
+			<canvas id="chart-area" width="500" height="500"/>
+		</div>
+
+		<script>
+			var data = {
+				value: 300,
+				maxValue: 500,
+				color: "rgba(220, 22, 22, 1)",
+				background: "rgba(250, 240, 240, 1)",
+			};
+
+			window.onload = function(){
+				var ctx = document.getElementById("chart-area").getContext("2d");
+				window.myDial = new Chart(ctx).Dial(data, {
+					responsive: true
+				});
+			};
+		</script>
+	</body>
+</html>
