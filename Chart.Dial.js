@@ -105,9 +105,17 @@
 			this.segment.transition({ endAngle: midAngle }, animDecimal);
 			this.backgroundSegment.transition({ startAngle: midAngle }, animDecimal);
 
-			this.segment.draw();
-			this.backgroundSegment.draw();
+			if (isDrawableAngle(this.startAngle, midAngle))
+				this.segment.draw();
+			if (isDrawableAngle(midAngle, this.endAngle))
+				this.backgroundSegment.draw();
 		}
 	});
+
+	function isDrawableAngle(startAngle, endAngle) {
+		// IE8 with ExplorerCanvas has an issue where arcs of near zero length are drawn as filled circles with
+		// a radius of the arc innerRadius.  This determines whether an angle is too small to be properly rendered.
+		return Math.abs(endAngle - startAngle) > 0.0005;
+	}
 
 }).call(this);
