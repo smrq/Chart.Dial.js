@@ -1,9 +1,19 @@
-(function(){
+(function (factory) {
+	"use strict";
+	if (typeof define === 'function' && define.amd) {
+		// AMD. Register as an anonymous module.
+		define(['chart.js'], factory);
+	} else if (typeof exports === 'object') {
+		// Node/CommonJS
+		module.exports = factory(require('chart.js'));
+	} else {
+		// Global browser
+		factory(Chart);
+	}
+}(function (Chart) {
 	"use strict";
 
-	var root = this,
-		Chart = root.Chart,
-		helpers = Chart.helpers;
+	var helpers = Chart.helpers;
 
 	var defaultConfig = {
 		percentageArc: 70,
@@ -118,4 +128,4 @@
 		return Math.abs(endAngle - startAngle) > 0.0005;
 	}
 
-}).call(this);
+}));
